@@ -20,7 +20,14 @@ def url_image(page_url: str):
     options.add_argument("--no-sandbox")  # server uchun kerak
     options.add_argument("--disable-dev-shm-usage")  # crash oldini oladi
     options.add_argument("--disable-gpu")
+    options.add_argument("--disable-software-rasterizer")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-setuid-sandbox")
     options.add_argument("--remote-allow-origins=*")  # yangi Chrome uchun
+    options.add_argument("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36")
+    
+    # Binary path (serverda kerak bo'lishi mumkin)
+    options.binary_location = "/usr/bin/google-chrome"
 
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
