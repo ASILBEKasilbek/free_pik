@@ -48,7 +48,7 @@ async def handle_freepik(message: Message):
 
     # ⏳ Yuklanmoqda (reply)
     loading_msg = await message.answer(
-        "⏳ Sahifa ochilmoqda va rasm qidirilmoqda...\n(10–20 sekund olishi mumkin)",
+        "Hozir...",
         reply_to_message_id=message.message_id
     )
 
@@ -60,7 +60,7 @@ async def handle_freepik(message: Message):
         if not folder or not files:
             await loading_msg.delete()
             await message.answer(
-                "😔 Rasm topilmadi yoki sahifada xato bor.",
+                "Xatolik bor",
                 reply_to_message_id=message.message_id
             )
             return
