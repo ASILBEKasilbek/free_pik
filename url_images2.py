@@ -16,12 +16,17 @@ def url_image(page_url: str):
     options = Options()
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--window-size=1920,1080")
-    # options.add_argument("--headless=new")  # kerak bo‘lsa yoq
+    options.add_argument("--headless=new")  # serverda shart
+    options.add_argument("--no-sandbox")  # server uchun kerak
+    options.add_argument("--disable-dev-shm-usage")  # crash oldini oladi
+    options.add_argument("--disable-gpu")
+    options.add_argument("--remote-allow-origins=*")  # yangi Chrome uchun
 
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options
     )
+
 
     image_url = None
 
