@@ -16,7 +16,7 @@ BOT_TOKEN = "7761371107:AAH4EKOJYENanQTnWMXbt0q-ekdtfxdG-OA"
 # Ruxsat berilgan guruhlar
 ALLOWED_GROUPS = [
     -1002938796047,
-    # -1003651094836
+    -1003651094836
 ]
 
 logging.basicConfig(level=logging.INFO)
